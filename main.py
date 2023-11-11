@@ -33,7 +33,9 @@ for r in results:
         # filtering out html formatting, keep title
         splitRec = recipeSearch.split('<span class="o-Ingredients__a-Ingredient--CheckboxLabel">')
         splitRec[-1] += ","
-        temp2 = list(map(lambda e: e[:-9], splitRec))[2:]
+        temp2 = list(map(lambda e: 
+                         e[:-9] if ("\xa0" not in e) else e[:-13]
+                         , splitRec))[2:]
         print(temp2)
 
 
