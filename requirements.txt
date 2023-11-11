@@ -1,1 +1,5 @@
+#Dependencies reuired to install
+
 requests
+beautifulsoup4
+string
