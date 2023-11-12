@@ -84,3 +84,30 @@ def searchRecipe(url):
                         e[:-9] if ("\xa0" not in e) else e[:-13]
                         , splitRec))[2:]
         return ingrList
+
+def threadSearchLet(var, ret, i):
+        """
+        take a url, array, and index, uses the searchLet function to find all link sections and stores it in ret[i]
+        parameters:
+                var (str): url to search for links on
+                ret (list/iterable): list to store the output
+                i (num/str): index in ret to store the output
+        returns:
+                void
+        """
+        ret[i] = searchLet(var)
+        return 
+
+
+def threadSearchRecipe(var, ret, i):
+        """
+        take a section, array, and index, get the link and url, get list of ingredients
+        parameters:
+                var (str): url of recipe
+                ret (list/iterable): list to store the output
+                i (num/str): index in ret to store the output
+        returns:
+                void
+        """
+        ret[i] = searchRecipe(var)
+        return 
