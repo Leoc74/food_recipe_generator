@@ -24,7 +24,6 @@ def main():
         #array of threads for individual recipes
         tarr2 = [] 
         tcount2 = 0
-        #ingrList = [None] * len(recList)*len(recList[0])
         ingrList = {}
         for subr in recList: #recList is 2d array
                 for recUrl, recTitle in subr:
