@@ -1,7 +1,9 @@
 from scrape import *
 import threading
+import time
 
 def main():
+        st = time.time()
         # original recipe page url
         baseUrl = 'https://www.foodnetwork.com/recipes/recipes-a-z/'
 
@@ -33,6 +35,8 @@ def main():
                 t.join()
         for r in ingrList:
                 print(r)
+        end = time.time()
+        print(end-st)
 
 
 if __name__ == "__main__":
