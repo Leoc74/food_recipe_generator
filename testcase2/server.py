@@ -3,7 +3,7 @@ from flask import Flask
 app = Flask(__name__)
 
 #APi route
-@app.route("/members")
+@app.route("/")
 def members():
     return {"members": ["Member1", "Member2", "Member 3"]}
 

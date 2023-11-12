@@ -22,7 +22,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    fetch("/members")
+    fetch("/")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
