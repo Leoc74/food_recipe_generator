@@ -84,3 +84,12 @@ def searchRecipe(url):
                         e[:-9] if ("\xa0" not in e) else e[:-13]
                         , splitRec))[2:]
         return ingrList
+
+def threadSearchLet(var, ret, i):
+        ret[i] = searchLet(var)
+        return 
+
+
+def threadSearchRecipe(var, ret, i):
+        ret[i] = searchRecipe(var)
+        return 
