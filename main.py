@@ -24,16 +24,16 @@ def main():
         #array of threads for individual recipes
         tarr2 = [] 
         tcount2 = 0
-        ingrList = {}
+        ingrMap = {}
         for subr in recList: #recList is 2d array
                 for recUrl, recTitle in subr:
-                    x = threading.Thread(target=threadSearchRecipe, args=(recUrl, ingrList, recTitle))
+                    x = threading.Thread(target=threadSearchRecipe, args=(recUrl, ingrMap, recTitle))
                     tarr2.append(x)
                     tarr2[tcount2].start()
                     tcount2 += 1
         for t in tarr2: #Reaping threads
                 t.join()
-        for r in ingrList:
+        for r in ingrMap:
                 print(r)
         end = time.time()
         print(end-st)
