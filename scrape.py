@@ -1,6 +1,7 @@
 import requests as req
 from bs4 import BeautifulSoup as bs
 from string import ascii_lowercase
+from flask import Flask, jsonify
 
 """
 methods used for getting recipe information from food network website

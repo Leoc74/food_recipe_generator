@@ -1,4 +1,6 @@
 from flask import Flask
+from "../scrape" import *
+print(ret)
 
 app = Flask(__name__)
 
