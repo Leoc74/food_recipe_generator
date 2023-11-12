@@ -1,8 +1,10 @@
 // App.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
+// The variable you need is ingredients, which is an empty array
 
 const App = () => {
+  const [data, setData] = useState([{}]);
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
 
@@ -19,8 +21,22 @@ const App = () => {
     setIngredients(updatedIngredients);
   };
 
+  useEffect(() => {
+    fetch("/members")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        console.log(data);
+      });
+  }, []);
+
   return (
     <div className="app-container">
+      {typeof data.members === "undefined" ? (
+        <p> Loading... </p>
+      ) : (
+        data.members.map((member, i) => <p key={i}>{member} </p>)
+      )}
       <h1>Food Search</h1>
       <div className="content-container">
         <div className="half-screen">
