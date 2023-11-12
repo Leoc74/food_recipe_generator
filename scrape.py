@@ -110,5 +110,7 @@ def threadSearchRecipe(var, ret, i):
         returns:
                 void
         """
-        ret[i] = searchRecipe(var)
+        temp = searchRecipe(var)
+        if(temp is not None):
+                ret[i] = temp
         return 
