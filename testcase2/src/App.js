@@ -1,6 +1,7 @@
 // App.js
 import React, { useState } from "react";
 import "./App.css";
+// The variable you need is ingredients, which is an empty array
 
 const App = () => {
   const [ingredients, setIngredients] = useState([]);
